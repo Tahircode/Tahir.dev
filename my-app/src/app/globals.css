@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+
+/* src/app/globals.css */
+
+  .animate-float {
+    will-change: transform;
+  }
+  @keyframes float-complex {
+    0%, 100% {
+      transform: translate(0,0) rotate(0deg) scale(1);
+    }
+    50% {
+      transform: translate(0,-40px) rotate(2deg) scale(1.02);
+    }
+  }
+    
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+ 
+  :root {
+    --font-inter: var(--font-inter);
+    --font-poppins: var(--font-poppins);
+    --font-space: var(--font-space);
+    --font-lora: var(--font-lora);
+    --font-mont: var(--font-mont);
+    --font-roboto: var(--font-roboto); 
+
+  }
+  
+  html.default body {
+    background-color: #1B2731;
+  }
+  
+  html.light body {
+    background-color: #ffffff;
+  }
+  
+  html.light .theme-text {
+    color: #1B2731;
+    transition: color 4s ease-in-out;
+
+  }
+  html.default .theme-text {
+    color: #ffffff;
+    transition: color 4s ease-in-out;
+  }
+  html.default .hover_on:hover,
+  html.light .hover_on:hover {
+    color: #15803d; 
+    transition: color 0.1s;
+  }
+  
+  html.default .menu{
+    background-color: #1B2731;
+    color: #ffffff
+  }
+  html.light .menu{
+    background-color: #ffffff;
+    color: #1B2731
+  }
+  
+  
+
+  
+ /* Animation utilities for fade/slide */
+@layer utilities {
+    .animate-fade-up {
+      @apply opacity-0 translate-y-8 transition-all duration-700 ease-out;
+    }
+    .animate-fade-up.visible {
+      @apply opacity-100 translate-y-0;
+    }
+  }
+  
+  
